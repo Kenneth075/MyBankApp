@@ -16,18 +16,7 @@ namespace MyBankApp.Implementation.CustomerImplementation
             var name= CustomerName();
             var email= CustomerEmail();
             var pwd=CustomerPassword();
-
-
-            //Console.WriteLine("Enter your fullname");
-            //string fullname = Console.ReadLine();
-
-            //Console.WriteLine("Enter your Email");
-            //string email = Console.ReadLine();
-
-            //Console.WriteLine("Enter your password");
-            //string password = Console.ReadLine();
-
-            //Creating a new customer
+            
             Customer customer = new Customer(id,name,email,pwd);
 
             using (var writer = new StreamWriter("Customers.txt"))

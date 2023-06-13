@@ -55,16 +55,7 @@ namespace MyBankApp.Implementation.CustomerImplementation
                 Console.WriteLine("Please try again or register a new account.");
             }
 
-
-
-
-            //Console.WriteLine("------Login Portal--------");
-            //Console.WriteLine("Enter your email");
-            //var email = Console.ReadLine();
-
-            //Console.WriteLine("Enter your password");
-            //var pwd = Console.ReadLine();
-            //Console.WriteLine("Login is running!");
+           
         }
     }
 }
