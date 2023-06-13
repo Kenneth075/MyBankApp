@@ -25,8 +25,6 @@ namespace MyBankApp.Implementation.CustomerImplementation
 
         public void MyDashBoard(Customer LoggedInCustomer)
         {
-
-
             Console.WriteLine($"---{LoggedInCustomer.Fullname}'s--DASHBOARD------\n");
             Console.WriteLine($"Welcome, dear {LoggedInCustomer.Fullname} .\nWhat would you like to do today ?\n");
             Console.WriteLine(">Press 1 Create Account");
