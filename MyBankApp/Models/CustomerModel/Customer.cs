@@ -9,16 +9,16 @@ namespace MyBankApp.Models.CustomerModel
 {
     internal class Customer
     {
-        public Customer(string id, string name, string email, string password)
+        public Customer(string customerId, string fullname, string email, string password)
         {
-            Id = id;
-            Name = name;
+            CustomerId = customerId;
+            Fullname = fullname;
             Email = email;
             Password = password;
         }
 
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string CustomerId { get; set; }
+        public string Fullname { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
 

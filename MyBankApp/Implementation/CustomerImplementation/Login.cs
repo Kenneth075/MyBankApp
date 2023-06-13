@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Transactions;
 using MyBankApp.Interfaces.CustomerInterface;
@@ -19,14 +20,45 @@ namespace MyBankApp.Implementation.CustomerImplementation
             string? myemail;
             string? mypassword;
 
+            Console.WriteLine("------Welcome to your Login portal-------");
+            do
+            {
+                Console.Write("Enter your email. (e.g, ken@gmail.com):>>> ");
+                myemail = Console.ReadLine();
+            } while (!Regex.IsMatch(myemail, emailPattern));
 
-            Console.WriteLine("------Login Portal--------");
-            Console.WriteLine("Enter your email");
-            var email = Console.ReadLine();
+            do
+            {
+                Console.WriteLine("password should not be less than 6 characters and should contain a special character: @ ,#,* ");
+                Console.Write("Enter your password: ");
+                mypassword = Console.ReadLine();
+            } while (!Regex.IsMatch(mypassword, passwordPattern));
 
-            Console.WriteLine("Enter your password");
-            var pwd = Console.ReadLine();
-            Console.WriteLine("Login is running!");
+
+            Customer? loggedInUser = customers.FirstOrDefault(c => c.Email == myemail && c.Password == mypassword);
+
+            if (loggedInUser != null)
+            {
+                Console.Clear();
+                Console.WriteLine("Successfully Logged in!");
+                _dash.MyDashBoard(loggedInUser);
+            }
+            else
+            {
+                Console.WriteLine("\n\nInvalid email or password.");
+                Console.WriteLine("Please try again or register a new account.");
+            }
+
+
+
+
+            //Console.WriteLine("------Login Portal--------");
+            //Console.WriteLine("Enter your email");
+            //var email = Console.ReadLine();
+
+            //Console.WriteLine("Enter your password");
+            //var pwd = Console.ReadLine();
+            //Console.WriteLine("Login is running!");
         }
     }
 }

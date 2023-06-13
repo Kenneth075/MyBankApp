@@ -32,9 +32,9 @@ namespace MyBankApp.Implementation.CustomerImplementation
 
             using (var writer = new StreamWriter("Customers.txt"))
             {
-                writer.WriteLine($" {customer.Id}, {customer.Name}, {customer.Email}, {customer.Password}");
+                writer.WriteLine($" {customer.CustomerId}, {customer.Fullname}, {customer.Email}, {customer.Password}");
             }
-            Console.WriteLine($"Congrats, {customer.Name} has been added to the Customer.txt File.");
+            Console.WriteLine($"Congrats, {customer.Fullname} has been added to the Customer.txt File.");
         }
     }
 }
