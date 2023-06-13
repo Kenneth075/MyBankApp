@@ -15,13 +15,13 @@ namespace MyBankApp.Implementation.CustomerImplementation
             var id = CustomerId();
             var name= CustomerName();
             var email= CustomerEmail();
-            var pwd=CustomerPassword();
+            var password=CustomerPassword();
             
-            Customer customer = new Customer(id,name,email,pwd);
+            Customer customer = new Customer(id,name,email,password);
 
             using (var writer = new StreamWriter("Customers.txt"))
             {
-                writer.WriteLine($" {customer.CustomerId}, {customer.Fullname}, {customer.Email}, {customer.Password}");
+                writer.WriteLine($"| {customer.CustomerId} | {customer.Fullname} | {customer.Email} | {customer.Password} |");
             }
             Console.WriteLine($"Congrats, {customer.Fullname} has been added to the Customer.txt File.");
         }
