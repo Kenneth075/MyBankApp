@@ -10,8 +10,14 @@ using MyBankApp.Models.CustomerModel;
 
 namespace MyBankApp.Implementation.CustomerImplementation
 {
-    internal class Login :RegHelper, ILogin
+    internal class Login : RegHelper,ILogin
     {
+        private IDashboard _dash;
+        public Login(IDashboard dash)
+        {
+            _dash = dash;
+        }
+
         public void LogMeIn()
         {
             List<Customer> customers = ReadCustomersFromFile("Customers.txt");

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBankApp.Interfaces.AccountInterface
+namespace MyBankApp.Interfaces.CustomerInterface
 {
-    internal interface ICreateAccount
+    internal interface IDashboard
     {
-        void CreateNewAccount(Customer loggedInCustomer);
+        void MyDashBoard(Customer LoggedInCustomer);
     }
 }

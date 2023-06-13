@@ -1,4 +1,5 @@
-﻿using MyBankApp.Models.AccountModel;
+﻿using MyBankApp.Interfaces.AccountInterface;
+using MyBankApp.Models.AccountModel;
 using MyBankApp.Models.CustomerModel;
 using System;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBankApp.Implementation.CustomerImplementation
+namespace MyBankApp.Implementation.AccountImplementation
 {
-    internal class CreateAccount
+    internal class CreateAccount : AccountHelper, ICreateAccount
     {
-        public string AcNo {get; set;}
-        public decimal Bal {set; get;}
-        public string AcType {set; get;}
+        public string AcNo { get; set; }
+        public decimal Bal { set; get; }
+        public string AcType { set; get; }
         public CreateAccount()
         {
             AcNo = "";
@@ -34,7 +35,6 @@ namespace MyBankApp.Implementation.CustomerImplementation
                 Console.WriteLine(" Please Enter your desired account type\n");
                 Console.WriteLine(">  Press 1 for savings account\n>  Press 2 for current account  ");
                 string? input = Console.ReadLine();
-
 
 
                 if (input == "" || input is null || !int.TryParse(input, out _))
@@ -94,10 +94,10 @@ namespace MyBankApp.Implementation.CustomerImplementation
                 {
                     writer.WriteLine($"| {myAccount.Customerid}   |   {myAccount.Fullname}   |   {myAccount.AccountNumber}   |  {myAccount.AccountType}   |  {myAccount.Balance}  | \n\n");
                 }
-                Console.WriteLine($" Congratulations {loggedInCustomer.Fullname}.\n Your newly created Account has been added to File.");
+                Console.WriteLine($" Congratulations {loggedInCustomer.Fullname}.\n Your newly created account has been added to File.");
             }
         }
     }
 }
-    
+
 

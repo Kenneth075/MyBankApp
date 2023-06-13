@@ -1,4 +1,5 @@
-﻿using MyBankApp.Models.AccountModel;
+﻿using MyBankApp.Interfaces.CustomerInterface;
+using MyBankApp.Models.AccountModel;
 using MyBankApp.Models.CustomerModel;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBankApp.Implementation.CustomerImplementation
+namespace MyBankApp.Implementation.AccountImplementation
 {
     internal class AccountHelper
     {
-        private readonly IDashBoard _dash;
+        private readonly IDashboard _dash;
         public void PromptToViewAccount(Customer loggedInCustomer)
         {
             string choice;
@@ -93,5 +94,5 @@ namespace MyBankApp.Implementation.CustomerImplementation
     }
 }
 
-    
+
 
