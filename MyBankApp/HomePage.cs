@@ -20,18 +20,30 @@ namespace MyBankApp
 
         public void MyHomePage()
         {
-            Console.WriteLine("Click 1 to register\nClick 2 to Login");
-            string choice = Console.ReadLine(); 
-            if (choice == "1")
+            string choice;
+            do
             {
-                
-                _reg.CustomerRegister();
-            }
-            if (choice == "2")
-            {
-                _log.LogMeIn();
+                Console.WriteLine("Welcome to United Bank of Nigeria\n\nPress 1 to register\nPress 2 to Login\nPress 3 to exit");
+                choice = Console.ReadLine();
+                if (choice == "1")
+                {
 
-            }
+                    _reg.CustomerRegister();
+                }
+                if (choice == "2")
+                {
+                    _log.LogMeIn();
+
+                }
+                if (choice == "3")
+                {
+                    Console.WriteLine("Thank you for banking with us");
+                    Environment.Exit(0);
+                }
+
+            }while (!int.TryParse(choice, out _) || int.Parse(choice) != 1 || int.Parse(choice) != 2 || int.Parse(choice) != 3);
         }
+
     }
+    
 }

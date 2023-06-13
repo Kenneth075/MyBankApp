@@ -8,22 +8,27 @@ using MyBankApp.Models.CustomerModel;
 
 namespace MyBankApp.Implementation.CustomerImplementation
 {
-    internal class CustomerRegistration : ICustomerRegistration
+    internal class CustomerRegistration: RegHelper, ICustomerRegistration
     {
         public void CustomerRegister()
         {
-            var id = Guid.NewGuid();
+            var id = CustomerId();
+            var name= CustomerName();
+            var email= CustomerEmail();
+            var pwd=CustomerPassword();
 
-            Console.WriteLine("Enter your fullname");
-            string fullname = Console.ReadLine();
 
-            Console.WriteLine("Enter your Email");
-            string email = Console.ReadLine();
+            //Console.WriteLine("Enter your fullname");
+            //string fullname = Console.ReadLine();
 
-            Console.WriteLine("Enter your password");
-            string password = Console.ReadLine();
+            //Console.WriteLine("Enter your Email");
+            //string email = Console.ReadLine();
 
-            Customer customer = new Customer(id,fullname,email,password);
+            //Console.WriteLine("Enter your password");
+            //string password = Console.ReadLine();
+
+            //Creating a new customer
+            Customer customer = new Customer(id,name,email,pwd);
 
             using (var writer = new StreamWriter("Customers.txt"))
             {
